@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="panel">
+  <p class="eyebrow">Gerenciar usuário</p>
+  <h1>Excluir cadastro?</h1>
+  <p>Você está prestes a excluir <strong>{{ user.username }}</strong>.</p>
+  <p>Essa ação remove o cadastro definitivamente. O histórico de notificações será preservado.</p>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    <div class="actions">{{ form.submit(class_='button danger') }}
+      <a class="button secondary" href="{{ url_for('main.index') }}">Cancelar</a>
+    </div>
+  </form>
+</section>
+{% endblock %}

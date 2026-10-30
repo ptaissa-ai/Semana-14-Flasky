@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="panel">
+  <p class="eyebrow">Gerenciar usuário</p>
+  <h1>Editar cadastro</h1>
+  <p>Atualize o nome e o e-mail de {{ user.username }}. A função será mantida.</p>
+  <form method="post">
+    {{ form.hidden_tag() }}
+    {% for field in [form.username, form.email] %}
+      <label for="{{ field.id }}">{{ field.label.text }}</label>
+      {{ field() }}
+      {% for error in field.errors %}<small class="error">{{ error }}</small>{% endfor %}
+    {% endfor %}
+    <div class="actions">{{ form.submit(class_='button') }}
+      <a class="button secondary" href="{{ url_for('main.index') }}">Cancelar</a>
+    </div>
+  </form>
+</section>
+{% endblock %}
