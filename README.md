@@ -89,21 +89,5 @@ from flasky import app as application
 
 Mudar os caminhos da aplicação existente na aba Web faz seu endereço atual passar a mostrar a Semana 14; a pasta e o repositório da Semana 13 permanecem preservados.
 
-## Banco da Semana 13 (opcional)
 
-A instalação separada começa com banco vazio. Para preservar os cadastros, antes da publicação faça backup do banco da Semana 13. Copie esse banco para instance/app.db da Semana 14, antes de executar db upgrade. A nova revisão acrescenta somente a coluna email, sem apagar os cadastros. Usuários anteriores ficam com e-mail não informado; ele poderá ser preenchido em Editar. Não execute db init nem stamp para esse fluxo: a base da Semana 13 já usa a migração inicial.
 
-## Comportamento e limites
-
-Aplicação acadêmica sem autenticação, como a base: visitantes podem editar/excluir qualquer cadastro e consultar o histórico. CSRF protege o envio dos formulários; não equivale a controle de acesso. Não use dados sensíveis nessa demonstração pública.
-
-A API HTTP 202 indica aceitação pelo SendGrid, não confirmação de entrega. Confira o painel do provedor e spam. O cadastro é revertido se o envio não for aceito. Uma falha de rede após o aceite pode causar duplicação numa nova tentativa, comportamento herdado da Semana 13.
-
-Não houve publicação nem envio real de mensagens durante a criação desta versão.
-
-Referência funcional consultada: https://teixeif.pythonanywhere.com/ (cadastro, listagem, editar e excluir).
-Base: https://github.com/ptaissa-ai/Semana-13-Flasky.
-
-## Validação desta entrega
-
-14 testes aprovados com o provedor simulado. Migrações verificadas em banco vazio e em banco da Semana 13 com usuário existente, preservado após a atualização.
