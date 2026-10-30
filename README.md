@@ -84,8 +84,7 @@ os.environ['FLASK_CONFIG'] = 'production'
 from flasky import app as application
 ```
 
-8. Se houver mapeamento /static/, ajuste o diretório para /home/taissapieri/Semana-14-Flasky/app/static. Clique Reload.
-9. Teste um cadastro inédito, confira os e-mails, edite o cadastro e teste Cancelar e Confirmar exclusão. Repetir um nome já cadastrado não envia nova notificação.
+
 
 Mudar os caminhos da aplicação existente na aba Web faz seu endereço atual passar a mostrar a Semana 14; a pasta e o repositório da Semana 13 permanecem preservados.
 
